@@ -1,0 +1,37 @@
+
+.taskBoard{
+    display: flex;
+    flex-direction: column;
+    
+}
+.statusContainer{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    
+    /* height: 100px; */
+}
+.taskContainr{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+.taskHeading{font-weight: bold;}
+.inputTask{
+    width: 15rem;
+    border: none;
+    border-bottom: 1px solid black;
+}
+.inputTask:focus{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+}
+.addTaskButton{
+    border: none;
+    background-color: white;
+    text-align: left;
+    color: gray;
+}
+.card{
+    box-shadow: 1px 2px 2px gray;
+}
