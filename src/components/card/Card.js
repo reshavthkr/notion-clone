@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
-import PopUp from '../PopUp';
+import PopUp from '../popUp/PopUp';
 
-export default function Card({taskName}) {
+export default function Card(props) {
 const [isClick, setIsClick] = useState(false)
 
 
@@ -9,14 +9,17 @@ const [isClick, setIsClick] = useState(false)
         // console.log("isClicked");
         setIsClick(true);
     }
+    const closePopup = () =>{
+        setIsClick(false);
+    }
     return (
         <>
             <div
-            
+            onClick={handleCardClick}
             className="card m-1 p-1" style ={{width:"15rem", hight:"1rem"}}>
-                <p onClick={handleCardClick}>{taskName}</p>
+                <p>{props.taskName}</p>
             </div>
-            {isClick?<PopUp />:null}
+            {isClick?<PopUp taskName={props.taskName} closePopup = {closePopup}/>:null}
         </>
     )
 }
